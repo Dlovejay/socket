@@ -78,7 +78,7 @@ final class TcpConnector implements ConnectorInterface
             $remote,
             $errno,
             $errstr,
-            0,
+            ini_get('default_socket_timeout'),
             \STREAM_CLIENT_CONNECT | \STREAM_CLIENT_ASYNC_CONNECT,
             \stream_context_create($context)
         );
